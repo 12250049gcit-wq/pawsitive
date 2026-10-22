@@ -16,7 +16,7 @@ app.use(express.json({ limit: '8mb' })); // pet photos arrive as resized data UR
 
 /* ---------- front end (served from the project root, only the files it needs) ---------- */
 ['index.html', 'styles.css', 'app.js', 'mock-api.js'].forEach((f) => app.get(f === 'index.html' ? '/' : '/' + f, (_, res) => res.sendFile(path.join(ROOT, f))));
-app.use('/image', express.static(path.join(ROOT, 'image')));
+app.use('/image', express.static(path.resolve(__dirname, '../image')));
 
 /* ---------- helpers ---------- */
 const wrap = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
