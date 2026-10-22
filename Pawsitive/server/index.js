@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { User, Pet, Application, Counter, Settings } = require('./models');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.resolve(__dirname, '../..');
 const PORT = process.env.PORT || 3006;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/pawsitive';
 const SECRET = process.env.JWT_SECRET || 'dev-secret-change-me';
