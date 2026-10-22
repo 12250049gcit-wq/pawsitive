@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pawsitive - adopt or foster a cat or dog.">
+<title>Pawsitive</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="app" aria-live="off"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<details class="accessibility-tools" id="accessibility-tools">
+  <summary aria-label="Open accessibility options">Accessibility</summary>
+  <div class="access-panel" role="group" aria-label="Display and readability options">
+    <strong>Make Pawsitive easier to use</strong>
+    <div class="access-row">
+      <button type="button" onclick="A11y.text(-1)" aria-label="Decrease text size">A− Smaller</button>
+      <button type="button" onclick="A11y.text(1)" aria-label="Increase text size">A+ Larger</button>
+    </div>
+    <button type="button" onclick="A11y.contrast()" aria-pressed="false" id="contrast-toggle">High contrast: off</button>
+    <button type="button" onclick="A11y.readPage()" id="read-page-button">Read page aloud</button>
+    <button type="button" onclick="A11y.stopReading()">Stop reading</button>
+    <button type="button" onclick="A11y.reset()">Reset display settings</button>
+    <p class="access-note"><strong>For deaf and hard-of-hearing visitors:</strong> important feedback is shown as visible text, not sound alone. Forms include written validation messages.</p>
+    <p class="mut">Keyboard tip: use Tab to move, Enter to select, and the skip link to jump to page content.</p>
+  </div>
+</details>
+<script src="mock-api.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

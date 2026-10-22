@@ -1,0 +1,16 @@
+image: node:20
+
+stages:
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+install_and_check:
+  stage: build
+  script:
+    - npm ci || npm install
+    - node --check server/index.js
+    - node --check server/seed.js
+    - node --check app.js
